@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>世界杯 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fb;
+            color: #1c2d3a;
+            line-height: 1.6;
+            padding: 1.5rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        /* 网格卡片风格 —— 半透明蓝绿点缀 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin: 1.8rem 0;
+        }
+
+        @media (min-width: 540px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 18px;
+            padding: 1.5rem 1.4rem;
+            box-shadow: 0 6px 18px rgba(0, 40, 50, 0.06), 0 2px 4px rgba(20, 90, 90, 0.04);
+            border: 1px solid rgba(60, 170, 170, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(30, 130, 130, 0.08);
+        }
+
+        .accent-border {
+            border-left: 4px solid #2fa5a5;
+        }
+
+        .hero {
+            padding: 2rem 0 0.6rem 0;
+        }
+
+        .hero span {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2b8b8b;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #0d2f3a;
+            line-height: 1.25;
+            margin: 0.4rem 0 0.6rem 0;
+        }
+
+        .hero h1 i {
+            font-style: normal;
+            background: linear-gradient(135deg, #1e7f7f, #2eb0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: #2c4d55;
+            background: rgba(50, 150, 150, 0.04);
+            padding: 0.2rem 0;
+            border-radius: 0;
+            max-width: 680px;
+            margin: 0.8rem 0 1.4rem 0;
+        }
+
+        .lead a {
+            color: #0f6d6d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1.5px;
+            font-weight: 500;
+        }
+
+        .lead a:hover {
+            color: #0a4f4f;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 2.2rem 0 1rem 0;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: #1d4d55;
+        }
+
+        .section-title::before {
+            content: "◈";
+            color: #2fa5a5;
+            font-size: 1.2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.6rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2b9b9b;
+            font-weight: bold;
+        }
+
+        .feature-list strong {
+            color: #0c4f5a;
+        }
+
+        .faq-summary {
+            background: rgba(30, 120, 120, 0.03);
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            margin: 2rem 0 1.2rem 0;
+            border: 1px solid rgba(40, 140, 140, 0.1);
+        }
+
+        .faq-summary details {
+            margin-top: 0.6rem;
+        }
+
+        .faq-summary summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #1b5f5f;
+            padding: 0.3rem 0;
+        }
+
+        .faq-summary summary:hover {
+            color: #0d4a4a;
+        }
+
+        .faq-summary p {
+            padding: 0.6rem 0 0.2rem 0.4rem;
+            color: #2e4b52;
+        }
+
+        .closing {
+            margin-top: 2.5rem;
+            padding: 1.6rem 0 1.2rem 0;
+            border-top: 1px solid rgba(50, 140, 140, 0.15);
+            text-align: center;
+            font-size: 0.95rem;
+            color: #3f636b;
+        }
+
+        .closing a {
+            color: #136868;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .closing a:hover {
+            color: #0b4a4a;
+        }
+
+        .btn-like {
+            display: inline-block;
+            background: rgba(45, 145, 145, 0.05);
+            border: 1px solid rgba(50, 150, 150, 0.2);
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            color: #1a6969;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="hero">
+        <span>—— 稳定入口 · 页面说明 ——</span>
+        <h1>关于 <i>世界杯</i> 的<span style="color:#136868;">一处安静起点</span></h1>
+    </div>
+
+    <div class="lead">
+        如果你正在寻找一个可以持续关注 <a href="https://hub-zh-fifa2026.com">世界杯</a> 的地方——这个页面整理了最基本的出发点。信息清晰、结构简单，没有反复跳转的迷宫，只有经过筛选的脉络。
+    </div>
+
+    <!-- 承接段落：稳定入口的由来 -->
+    <div class="card accent-border">
+        <p style="margin-bottom:0.3rem;">从许多反馈来看，大家需要的不是一个塞满弹窗和广告的聚合器，而是值得信任的索引页。这里不堆叠碎片消息，而是将赛事背景、观赛常识与可靠来源放在一起。页面会随赛程阶段做适度更新，保持内容与节奏的匹配。</p>
+        <p style="margin-top:0.8rem;">—— 它更像一个书架侧面贴好的标签：告诉你第几排、第几列放着什么。对于<a href="https://hub-zh-fifa2026.com" style="color:#0f6d6d;text-decoration:underline;">世界杯</a>本身，这种克制的整理恰好是长期陪伴的前提。</p>
+    </div>
+
+    <!-- 特点列表 (网格卡片) -->
+    <div class="section-title">特点 · 为什么这样安排</div>
+    <div class="card-grid">
+        <div class="card">
+            <h3 style="font-weight:500;color:#185858;margin-bottom:0.6rem;">🧭 导航优先</h3>
+            <ul class="feature-list">
+                <li><strong>单层结构</strong> —— 内容都在首屏或一次滚动内，减少点击深度</li>
+                <li><strong>标识清晰</strong> —— 每个板块都有明确的标题和分隔，视觉上不混淆</li>
+                <li><strong>链接收敛</strong> —— 仅保留指向 <a href="https://hub-zh-fifa2026.com" style="color:#0f6d6d;">世界杯</a> 的必要出口，避免信息过载</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 style="font-weight:500;color:#185858;margin-bottom:0.6rem;">📐 阅读节奏</h3>
+            <ul class="feature-list">
+                <li><strong>短句开场</strong> —— 直接说明页面定位，不消耗耐心</li>
+                <li><strong>卡片分区</strong> —— 每个独立话题一块区域，扫视即可定位</li>
+                <li><strong>温和收束</strong> —— 结尾不做催促，只提供自然的延续路径</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 style="font-weight:500;color:#185858;margin-bottom:0.6rem;">🎨 蓝绿点缀 · 低干扰</h3>
+            <ul class="feature-list">
+                <li>主色调取自 <span style="color:#1b7a7a;">#1b7a7a</span> 与 <span style="color:#2fa5a5;">#2fa5a5</span>，灰度背景让卡片突出</li>
+                <li>无弹窗、无自动播放、无闪烁元素</li>
+                <li>移动端字体不小于 16px，间距留足呼吸感</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 style="font-weight:500;color:#185858;margin-bottom:0.6rem;">🔍 实用 FAQ 摘要</h3>
+            <ul class="feature-list">
+                <li>常见疑问直接展开，不用跳出页面</li>
+                <li>内容基于过往赛季的普遍问题，不编造数据</li>
+                <li>保持精简，多数回答不超过三句话</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 (可折叠) -->
+    <div class="faq-summary">
+        <div style="font-weight:500;color:#145a5a; margin-bottom:0.25rem;">❓ 关于世界杯 · 几个常见问题</div>
+        <details>
+            <summary>这个页面会频繁变化吗？</summary>
+            <p>页面本身保持稳定，主要结构不会每天改动。如有必要，只会在赛程临近或重要节点做适度补充，并保留修改记录说明。</p>
+        </details>
+        <details>
+            <summary>为什么只放一个主要链接？</summary>
+            <p>为了降低选择负担。你只需要知道 <a href="https://hub-zh-fifa2026.com" style="color:#0f6d6d;">世界杯</a> 这个核心地址就够了，其他延伸内容可以从那里自然发现。</p>
+        </details>
+        <details>
+            <summary>移动端浏览体验如何？</summary>
+            <p>所有卡片均为响应式设计，单列自适应，触摸目标不小于 44×44 像素。蓝绿色点缀在深色/浅色模式下都保持可读性。</p>
+        </details>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing">
+        <p style="margin-bottom:0.4rem;">页面整理基于过往几届赛事的信息习惯，不追逐瞬时热点，不制造紧迫感。</p>
+        <p>如果你需要一个安静、可靠的起点，这里就是。<br>
+        关于 <a href="https://hub-zh-fifa2026.com">世界杯</a> 的更多内容，可以从这个入口慢慢展开。</p>
+        <div class="btn-like" style="margin-top:1rem;">⏺ 持续可用 · 蓝绿标记</div>
+    </div>
+
+</div>
+</body>
+</html>
