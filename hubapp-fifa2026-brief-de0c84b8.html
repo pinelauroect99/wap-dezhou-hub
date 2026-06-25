@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 资料索引站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9fafb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 760px;
+      width: 100%;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+      color: #0f172a;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 2.5rem;
+      border-left: 3px solid #94a3b8;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: #1e293b;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.4rem 0 0.6rem 0;
+      color: #334155;
+    }
+
+    /* 卡片 & 区块 */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.5rem 0 1rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      flex: 1 1 180px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 10px rgba(0,0,0,0.02);
+      transition: all 0.15s ease;
+      border: 1px solid #f1f5f9;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-color: #d1d9e6;
+    }
+
+    .card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .highlight-box {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 1.5rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-item {
+      margin: 1.2rem 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #0f172a;
+    }
+
+    .faq-a {
+      color: #475569;
+      padding-left: 0.2rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.8rem;
+      margin: 1rem 0;
+    }
+
+    .tag {
+      background: #ffffff;
+      border: 1px solid #d1d9e6;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+
+    .tag.highlight {
+      background: #eef2ff;
+      border-color: #a5b4fc;
+      color: #1e3a8a;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #e9edf3;
+      margin: 2.2rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.8rem;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+
+    a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    .inline-link-accent {
+      font-weight: 500;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1rem 1.2rem;
+        flex: 1 1 100%;
+      }
+      .highlight-box {
+        padding: 1.2rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>📇 世界杯 · 资料信息库</h1>
+  <div class="subhead">从赛程、数据到历史档案，一次理清脉络</div>
+
+  <!-- 简短说明区：切入资料整理视角 -->
+  <p style="font-size:1.05rem;">
+    如果你在找关于 <a href="https://hubapp-fifa2026.com" class="inline-link-accent">世界杯</a> 的可靠资料索引，
+    这里整理了一组实用信息分类。无论备战观赛，还是回顾经典，都可以从下面几个板块开始。
+  </p>
+
+  <!-- 目录感布局：卡片网格（信息分类） -->
+  <h2>📋 信息目录</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">📅</div>
+      <h3>赛程与场地</h3>
+      <p>2026 世界杯举办城市、球场容量、比赛日历及时区对照。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3>历届冠军</h3>
+      <p>1930 至今全部冠亚军决赛记录、最佳射手、经典比赛回顾。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>球队 &amp; 数据</h3>
+      <p>参赛队历史战绩、世界排名、晋级之路与小组抽签分析。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📖</div>
+      <h3>规则与记录</h3>
+      <p>赛事规程、VAR 演变、红黄牌统计、单届进球纪录等。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：详细说明资料整理方式 -->
+  <h2>🔍 资料从哪来</h2>
+  <p>
+    这些内容主要参考了官方赛事文档、FIFA 统计年鉴及多家体育数据机构公开信息。
+    为了方便快速查阅，按主题整理成短条目与清单。每部分都附有原始来源链接，
+    你可以直接前往 <a href="https://hubapp-fifa2026.com">世界杯</a> 站点获取更深度的赛事数据与实时动态。
+  </p>
+  <p style="margin-top:0.8rem;">
+    如果你对某支球队的历届表现感兴趣，或者想对比不同主办国的筹办特点，
+    目前整理的条目基本覆盖了主要维度，后续还会补充更多冷门知识。
+  </p>
+
+  <!-- 提示区（带卡片样式） -->
+  <div class="highlight-box">
+    <p style="font-weight:500; margin-bottom:0.3rem;">💡 查阅提示</p>
+    <p>• 赛程表会随抽签结果更新，建议以官方最终版本为准。</p>
+    <p>• 历史数据中部分早期比赛因记录缺失，进球数据可能存在争议，已标注参考来源。</p>
+    <p>• 如果你发现遗漏或错误，欢迎通过相关渠道提交反馈。</p>
+  </div>
+
+  <!-- 相关信息区：标签 + FAQ 摘要 -->
+  <h2>🏷️ 相关标签</h2>
+  <div class="tag-list">
+    <span class="tag">2026 世界杯</span>
+    <span class="tag highlight">赛程</span>
+    <span class="tag">参赛球队</span>
+    <span class="tag">东道主</span>
+    <span class="tag">历史纪录</span>
+    <span class="tag">经典对决</span>
+    <span class="tag">金靴奖</span>
+    <span class="tag">球场</span>
+  </div>
+
+  <h2>❓ 常见信息点</h2>
+  <div class="faq-item">
+    <div class="faq-q">2026 世界杯在哪几个国家举办？</div>
+    <div class="faq-a">美国、加拿大、墨西哥联合主办，共 16 个承办城市，具体场馆列表可查赛程页。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">哪里能看到完整的历届世界杯数据？</div>
+    <div class="faq-a">在 <a href="https://hubapp-fifa2026.com">世界杯</a> 资料库里有 1930 年至今的完整赛果、射手榜和比赛报告，可直接按年份筛选。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">本届世界杯小组赛抽签规则是什么？</div>
+    <div class="faq-a">分档依据为最新国际足联排名，同大洲回避原则（欧足联除外），具体细则官方已公布。</div>
+  </div>
+
+  <hr>
+
+  <!-- 附加场景：适合哪些人 -->
+  <h2>🧭 适合这样的你</h2>
+  <ul style="padding-left:1.4rem; color:#475569; margin-bottom: 0.5rem;">
+    <li>想看赛程但不想被广告打扰的普通球迷</li>
+    <li>需要整理世界杯作业/展示资料的学生</li>
+    <li>写世界杯回顾文章、找历史数据的内容创作者</li>
+    <li>单纯想浏览历届精彩瞬间的怀旧派</li>
+  </ul>
+
+  <div class="footer-note">
+    资料索引 · 持续更新 · 非官方页面<br>
+    信息仅供参考，最终以 FIFA 官方发布为准
+  </div>
+</div>
+</body>
+</html>
